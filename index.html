@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/public/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>DOM Fundamentals | Mastery</title>
+
+</head>
+
+<body class="bg-[#0f172a] text-slate-200 min-h-screen selection:bg-indigo-500/30">
+
+    <header class="py-12 px-6 text-center border-b border-slate-800 bg-slate-900/50 backdrop-blur-xl sticky top-0 z-50">
+        <h1
+            class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+            DOM Mastery
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            Experimenta con selectores, manipulación de contenido y estructura en tiempo real.
+        </p>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 grid gap-8 lg:grid-cols-2">
+
+        <!-- Section: getElementById -->
+        <section
+            class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300 group">
+            <div class="flex items-center gap-4 mb-6">
+                <div
+                    class="p-3 bg-indigo-500/10 rounded-2xl text-indigo-400 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold">getElementById</h2>
+            </div>
+            <p class="text-slate-400 mb-6">Selecciona un elemento único por su atributo <code>id</code>.</p>
+            <div id="main-title-container" class="p-6 bg-slate-900 rounded-2xl border border-slate-700">
+                <h3 id="app-title" class="text-xl font-medium text-indigo-300">¡Hola, Mundo del DOM!</h3>
+                <p class="text-sm text-slate-500 mt-2">ID: <span class="text-pink-400">#app-title</span></p>
+            </div>
+        </section>
+
+        <!-- Section: getElementsByClassName -->
+        <section
+            class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 group">
+            <div class="flex items-center gap-4 mb-6">
+                <div
+                    class="p-3 bg-purple-500/10 rounded-2xl text-purple-400 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <line x1="3" y1="9" x2="21" y2="9" />
+                        <line x1="9" y1="21" x2="9" y2="9" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold">getElementsByClassName</h2>
+            </div>
+            <p class="text-slate-400 mb-6">Obtén una colección de elementos que comparten la misma clase.</p>
+            <div class="flex flex-wrap gap-3">
+                <span
+                    class="skill-tag px-4 py-2 bg-slate-900 border border-slate-700 rounded-full text-sm hover:bg-purple-500/20 hover:border-purple-500 transition-colors cursor-default">HTML</span>
+                <span
+                    class="skill-tag px-4 py-2 bg-slate-900 border border-slate-700 rounded-full text-sm hover:bg-purple-500/20 hover:border-purple-500 transition-colors cursor-default">CSS</span>
+                <span
+                    class="skill-tag px-4 py-2 bg-slate-900 border border-slate-700 rounded-full text-sm hover:bg-purple-500/20 hover:border-purple-500 transition-colors cursor-default">JavaScript</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-4 italic">Clase común: <span class="text-pink-400">.skill-tag</span></p>
+        </section>
+
+        <!-- Section: getElementsByTagName -->
+        <section
+            class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 group">
+            <div class="flex items-center gap-4 mb-6">
+                <div
+                    class="p-3 bg-emerald-500/10 rounded-2xl text-emerald-400 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold">getElementsByTagName</h2>
+            </div>
+            <p class="text-slate-400 mb-6">Selecciona todos los elementos de un tipo específico (ej. list items).</p>
+            <ul class="space-y-2">
+                <li class="p-3 bg-slate-900/50 rounded-lg border border-slate-700/30">Elemento de lista 1</li>
+                <li class="p-3 bg-slate-900/50 rounded-lg border border-slate-700/30">Elemento de lista 2</li>
+                <li class="p-3 bg-slate-900/50 rounded-lg border border-slate-700/30">Elemento de lista 3</li>
+            </ul>
+            <p class="text-xs text-slate-500 mt-4 italic">Etiqueta: <span class="text-pink-400">&lt;li&gt;</span></p>
+        </section>
+
+        <!-- Section: querySelector & querySelectorAll -->
+        <section
+            class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700/50 hover:border-orange-500/50 transition-all duration-300 group lg:col-span-1">
+            <div class="flex items-center gap-4 mb-6">
+                <div
+                    class="p-3 bg-orange-500/10 rounded-2xl text-orange-400 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold">querySelectors</h2>
+            </div>
+            <p class="text-slate-400 mb-6">Los selectores más potentes. Usan sintaxis de CSS.</p>
+            <div class="space-y-4">
+                <div class="card p-4 bg-slate-900 rounded-xl border border-slate-700 flex justify-between items-center"
+                    data-type="feature">
+                    <span>Característica Especial</span>
+                    <button
+                        class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-md text-xs font-bold">ACCION</button>
+                </div>
+                <div class="card p-4 bg-slate-900 rounded-xl border border-slate-700 flex justify-between items-center"
+                    data-type="info">
+                    <span>Información General</span>
+                    <button class="px-3 py-1 bg-slate-800 text-slate-400 rounded-md text-xs font-bold">INFO</button>
+                </div>
+            </div>
+            <p class="text-xs text-slate-500 mt-4 italic">Prueba: <span
+                    class="text-pink-400">.card[data-type="feature"]</span></p>
+        </section>
+
+        <!-- Section: innerHTML & Dynamic Rendering -->
+        <section
+            class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700/50 hover:border-pink-500/50 transition-all duration-300 group lg:col-span-1">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="p-3 bg-pink-500/10 rounded-2xl text-pink-400 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                        <path d="M2 2l7.5 1.5" />
+                        <path d="M14 11l7 7" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold">innerHTML & Content</h2>
+            </div>
+            <p class="text-slate-400 mb-6">Usa este contenedor para renderizar HTML dinámico desde JavaScript.</p>
+            <div id="dynamic-content"
+                class="min-h-[120px] p-6 bg-slate-900/80 border-2 border-dashed border-slate-700 rounded-2xl flex items-center justify-center text-slate-500 italic">
+                El contenido renderizado aparecerá aquí...
+            </div>
+            <div class="mt-6 flex justify-center">
+                <button id="render-btn"
+                    class="px-6 py-2 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-semibold shadow-lg shadow-pink-900/20 transition-all active:scale-95">
+                    Renderizar Ejemplo
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 DOM Fundamentals.</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
